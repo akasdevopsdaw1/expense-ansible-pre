@@ -1,6 +1,8 @@
 - name: Backend App
   hosts: all
   become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
     - name: Disable default NodeJS Version Module
       ansible.builtin.shell: dnf module disable nodejs -y
@@ -45,7 +47,7 @@
 
     - name: Install MySQL Client
       ansible.builtin.dnf:
-        path: mysql
+        name: mysql
         state: installed  
 
     - name: Install Python MySQL Client
