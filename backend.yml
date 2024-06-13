@@ -24,7 +24,7 @@
 
     - name: Create App Directory
       ansible.builtin.file:
-        path: /app``
+        path: /app
         state: directory
 
     - name: Download and Extract App Content
